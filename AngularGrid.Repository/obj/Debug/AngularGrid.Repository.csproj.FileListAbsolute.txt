@@ -1,0 +1,5 @@
+D:\Personal\Project\AngularGrid\AngularGrid\AngularGrid.Repository\bin\Debug\AngularGrid.Repository.dll
+D:\Personal\Project\AngularGrid\AngularGrid\AngularGrid.Repository\bin\Debug\AngularGrid.Repository.pdb
+D:\Personal\Project\AngularGrid\AngularGrid\AngularGrid.Repository\obj\Debug\AngularGrid.Repository.csprojResolveAssemblyReference.cache
+D:\Personal\Project\AngularGrid\AngularGrid\AngularGrid.Repository\obj\Debug\AngularGrid.Repository.dll
+D:\Personal\Project\AngularGrid\AngularGrid\AngularGrid.Repository\obj\Debug\AngularGrid.Repository.pdb
