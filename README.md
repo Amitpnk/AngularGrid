@@ -9,6 +9,11 @@ In this application, we are going learn Pagination, Sorting and Filter for HTML 
   3. Sorting 
   4. Use the utility file in your application (Plug & Play) 
   5. AngularGrid application is fully architect using .NET Framework
+  
+<b>Demo</b><br><br>
+Below is the screen shot of the AngularGrid Application<br><br>
+<img src="https://raw.githubusercontent.com/Amitpnk/AngularGrid/master/Screenshot.png" alt="Screenshot of AngularGrid"/>
+
 
 <b>Bugs: </b><br><br>
   When submitting a bug, please attach an exported sitemap.
