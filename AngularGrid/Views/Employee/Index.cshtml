@@ -1,0 +1,133 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Angular Grid</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/AngularGrid_Model.js"></script>
+    <script src="~/Scripts/AngularGrid_Utility.js"></script>
+    <script src="~/Scripts/AngularGrid_Factory.js"></script>
+    <script src="~/Scripts/AngularGrid.js"></script>
+    <style>
+
+        .sortorder:after {
+            content: '\25b2';
+        }
+
+        .sortorder.reverse:after {
+            content: '\25bc';
+        }
+
+        ul.pagination {
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+        }
+
+            ul.pagination li {
+                display: inline;
+            }
+
+                ul.pagination li a {
+                    color: black;
+                    float: left;
+                    padding: 8px 16px;
+                    text-decoration: none;
+                    transition: background-color .3s;
+                }
+
+                    ul.pagination li a.active {
+                        background-color: #337AC6;
+                        color: white;
+                    }
+
+                    ul.pagination li a:hover:not(.active) {
+                        background-color: #ddd;
+                    }
+
+    </style>
+</head>
+<body ng-app="MainPage">
+    <div class="container" ng-controller="AngularGridViewModel">
+        <h2>Angular Grid</h2>
+        <p>Table pagination, searching and sorting in Angularjs and Web API</p>
+        <div>
+            <br />
+            <div class="row">
+                Show <select ng-model="PageSize" ng-change="loadGrid(1)">
+                    <option ng-selected="true" value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                </select> entries
+                <div class="box-tools pull-right">
+                    <div class="input-group input-group-sm" style="width: 150px;">
+                        <input type="text" class="form-control pull-right" placeholder="Search" ng-model="search">
+                        <div class="input-group-btn">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="box-body table-responsive no-padding">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <a style=" cursor: pointer" ng-click="Utility.sortBy('EmpNo',true)">Emp No</a>
+                                    <span class="sortorder" ng-show="propertyName === 'EmpNo'" ng-class="{reverse: reverse}"></span>
+                                </th>
+                                <th>
+                                    <a style=" cursor: pointer" ng-click="sortBy('EmpName')">Emp Name</a>
+                                    <span class="sortorder" ng-show="propertyName === 'EmpName'" ng-class="{reverse: reverse}"></span>
+                                </th>
+                                <th>
+                                    <a style=" cursor: pointer" ng-click="sortBy('EmpEmailID')">Email</a>
+                                    <span class="sortorder" ng-show="propertyName === 'EmpEmailID'" ng-class="{reverse: reverse}"></span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="x in BindGrid |filter: search |orderBy:propertyName:reverse">
+                                <td>{{x.EmpNo}}</td>
+                                <td>{{x.EmpName}}</td>
+                                <td>{{x.EmpEmailID}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="col-lg-3" style="margin-top:30px">
+                    <div class="form-group">
+                        {{PagingMessage}}
+
+                    </div>
+                </div>
+                <div class="pagination pagination-sm no-margin pull-right">
+                    <ul class="pagination disabled">
+                        <li>
+                            <a ng-click="prevPage()">&laquo; Prev</a>
+                        </li>
+                    </ul>
+                    <ul class="pagination  " ng-repeat="n in Utility.range(1,VirtualItemCount ,PageSize,1)">
+                        <li><a   ng-class="{active: n == currentPage}" ng-click="loadGrid(n)">{{n}}</a></li>
+                    </ul>
+                    <ul class="pagination">
+                        <li>
+                            <a ng-click="nextPage()">Next &raquo;</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
