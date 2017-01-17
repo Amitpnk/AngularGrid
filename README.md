@@ -1,7 +1,6 @@
 # AngularGrid
 
-In this application, we are going learn Pagination, Sorting and Filter for HTML table via AngularJS with WebAPI.
-
+In this application, we are going learn to how to do Pagination, Searching and Sorting for HTML table via Angularjs and retrieving data is from Database via Web API. And to standardize the code we are implementing some Design Pattern.
 
 <b>Features: </b><br>
   1. Pagination with Lazy loading concept 
