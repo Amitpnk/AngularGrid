@@ -13,6 +13,8 @@ In this application, we are going learn to how to do Pagination, Searching and S
 Below is the screen shot of the AngularGrid Application<br><br>
 <img src="https://raw.githubusercontent.com/Amitpnk/AngularGrid/master/Screenshot.png" alt="Screenshot of AngularGrid"/>
 
+<b>Setup: </b><br><br>
+  Run the <i>SQL_Scripts.sql</i> in the SQL Server for Database setup and connect the Application to this DB
 
 <b>Bugs: </b><br><br>
   When submitting a bug, please attach an exported sitemap.
