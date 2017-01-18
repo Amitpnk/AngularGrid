@@ -15,6 +15,6 @@ Below is the screen shot of the AngularGrid Application<br><br>
 
 <b>Setup: </b><br><br>
   Run the <i>SQL_Scripts.sql</i> in the SQL Server for Database setup and connect the Application to this DB
-
+<br>
 <b>Bugs: </b><br><br>
   When submitting a bug, please attach an exported sitemap.
